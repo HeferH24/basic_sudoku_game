@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #DDE;
+    font-family: monospace;
+}
+.row {
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.cell {
+    text-align: center;
+    line-height: 2.4rem;
+    border-top: 2px #000 solid;
+    border-right: 2px #000 solid; 
+    width: 10vw; /*aprox 136 px en mi laptop*/
+    height: 10vw;
+    max-width: 2.5rem; /* 40 px para font size del root : 16px*/
+    max-height: 2.5rem;
+}
+
+.cell:hover {
+    cursor: pointer;
+}
+
+/** Borders for the grid*/
+#game-grid .row:nth-child(3n+1) .cell{
+    border-top: 5px #000 solid;
+}
+
+#game-grid .row .cell:nth-child(3n) {
+    border-right: 5px #000 solid;
+}
+
+#game-grid .row .cell:first-child{ /*of the one with class .row  take the first of the cells inside the element with the class */
+    border-left: 5px #000 solid;
+}
+  
+#game-grid .row:last-child { 
+    border-bottom: 5px #000 solid;
+}  
+ 
+
+#button-pad .cell:hover, #options .cell:hover{
+    background-color: #000;
+    color: #FFF;
+}
+
+#options {   
+   font-weight: bold;
+   font-size: 1rem;
+   display: flex; 
+   flex-direction: row;
+   width: 90vw; /*9 * 10 % del vw */
+   max-width: 22.5rem; /* 9*2.5 = 9*(anchura maxima de celda) rem  */
+   margin-right: auto; /*centrado*/
+   margin-left: auto;
+   border-bottom: 2px #000 solid;
+}
+ 
+#diff-level, #restart-button, #erase-button {
+    max-width: 7.5rem; /* tercera parte de la anchura maxima del contenedor options */
+    width: 30vw; /*tercera parte de la anchura de options */
+}
+
+#restart-button {
+    border-left: 2px #000 solid;
+}
+
+#button-pad .row{
+    border-left: 2px #000 solid;
+    border-bottom: 2px #000 solid;
+}
